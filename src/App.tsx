@@ -147,6 +147,14 @@ function App() {
         >
           Take food away (you suck)!
         </Button>
+        <Button
+          onClick={() => {
+            useBearStore.persist.rehydrate();
+            console.log(useBearStore.getState());
+          }}
+        >
+          Rehydrate bear(s)!
+        </Button>
       </Box>
     </Container>
   );

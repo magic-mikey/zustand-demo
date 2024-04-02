@@ -22,7 +22,8 @@ export const useBearStore = create<BearState>()(
     }),
     {
       name: "food-storage", // name of item in the storage (must be unique)
-      storage: createJSONStorage(() => localStorage), // (optional) by default the 'localStorage' is used
+      storage: createJSONStorage(() => sessionStorage), // (optional) by default the 'localStorage' is used
+      skipHydration: true,
       partialize: (state) => ({ bears: state.bears }),
       onRehydrateStorage: (state) => {
         console.log(state);
